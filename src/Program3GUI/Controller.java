@@ -1,9 +1,12 @@
 package Program3GUI;
 
+import TuitionManager.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
+
+import javax.swing.*;
 
 /**
  * Controller class used to define and control the functionalities of the GUI. Will coordinate with FXML file.
@@ -11,12 +14,15 @@ import javafx.event.ActionEvent;
  * @author Tin Fung
  */
 public class Controller {
+    private StudentList Allstudents= new StudentList();
+    ;
 
     //type-specific variables
     String typeOfStudent;
     int instateStudentFunds;
     boolean exchangeStudent;
     boolean tristateareaStudent;
+    private final int INTERNATIONAL_STUDENT_CREDIT_REQUIREMENT = 9;
 
     //following are instances of the fxml elements, using their fxml ids, that will be used
     @FXML
@@ -29,7 +35,21 @@ public class Controller {
     private HBox fundsArea;
 
     @FXML
+    private CheckBox checkFunds;
+
+    @FXML
+    private CheckBox IsTriState;
+
+    @FXML
+    private CheckBox IsExchange;
+
+
+
+    @FXML
     private TextArea outputArea;
+
+    @FXML
+    private TextField funding;
 
     @FXML
     private TextField fnameInput;
@@ -39,16 +59,16 @@ public class Controller {
 
     @FXML
     private TextField creditsInput;
+    @FXML
+    private RadioButton instateRadioButton;
+    @FXML
+    private RadioButton outstateRadioButton;
+    @FXML
+    private RadioButton internationalRadioButton;
 
-    //type-specific elements:
     @FXML
     private ToggleGroup studentType;
 
-    @FXML
-    private ToggleGroup triStateRadioGroup;
-
-    @FXML
-    private ToggleGroup exchangeRadioGroup;
 
 
     /**
@@ -56,7 +76,18 @@ public class Controller {
      * @author Rizwan Chowdhury
      * @author Tin Fung
      */
+    @FXML
     private void clearGuiInputs(){
+        fnameInput.clear();
+        lnameInput.clear();
+        creditsInput.clear();
+        funding.clear();
+        instateRadioButton.setSelected(false);
+        outstateRadioButton.setSelected(false);
+        internationalRadioButton.setSelected(false);
+        checkFunds.setSelected(false);
+        IsTriState.setSelected(false);
+        IsExchange.setSelected(false);
         //needs to be done
         // - should clear text fields and de-select any radio/toggle buttons
         // - should NOT clear output text area
@@ -73,6 +104,7 @@ public class Controller {
      */
     private void clearTypeSpecificInputs(ActionEvent event){
         //needs to be done
+        //merged to typeSelectionDisabler
         // - should : everytime user selects a different option for type of student clear any currently entered type
         //            specific inputs already placed. For example: if user first clicked Outstate and selected Yes for
         //            tri-state area and then selected Instate, then should de-select the Yes in tri-state if possible
@@ -85,15 +117,33 @@ public class Controller {
      * Will deselect all the radio buttons in the given group.
      * @param groupToBeCleared group for which radio button are to be cleared.
      */
+
     private void clearRadioButtons(ToggleGroup groupToBeCleared){
+        //not used
+        groupToBeCleared.getSelectedToggle().setSelected(false);
 
     }
+
+    @FXML
+    public void fundingdisabler(ActionEvent event){
+        String eventSourceId = ((CheckBox)event.getSource()).getId();
+        switch (eventSourceId) {
+            case "checkFunds":
+                funding.setDisable(!checkFunds.isSelected());
+                break;
+
+        }
+
+
+
+    }
+
 
 
     /**
      * Controller Method to disable/enable different sections of student specific information input based on which
      * option (type of student) is selected. Only section corresponding to selected option (Instate, Outstate, International)
-     * will be enabled, others will be disabled.
+     * will be enabled, others will be disabled. It will also clear other types everytime the user selects a different option for type of student clear any currently entered type
      * @param event Toggling of Instate, Outstate, or International to trigger this function.
      * @author Rizwan Chowdhury
      */
@@ -107,18 +157,27 @@ public class Controller {
                 triStateSelectionArea.setDisable(true);
                 exchangeSelectionArea.setDisable(true);
                 fundsArea.setDisable(false);
+                IsTriState.setSelected(false);
+                IsExchange.setSelected(false);
                 break;
 
             case "outstateRadioButton":
                 fundsArea.setDisable(true);
                 exchangeSelectionArea.setDisable(true);
                 triStateSelectionArea.setDisable(false);
+                checkFunds.setSelected(false);
+                IsExchange.setSelected(false);
+                funding.clear();
+
                 break;
 
             case "internationalRadioButton":
                 fundsArea.setDisable(true);
                 triStateSelectionArea.setDisable(true);
                 exchangeSelectionArea.setDisable(false);
+                funding.clear();
+                checkFunds.setSelected(false);
+                IsTriState.setSelected(false);
                 break;
         }
 
@@ -196,6 +255,7 @@ public class Controller {
             outputArea.appendText("Must take greater than zero credits.\n");
             return;
         }
+        addSpecificTypeStudent(fname,lname,credits);
     }
 
 
@@ -206,6 +266,18 @@ public class Controller {
      * @param credits Amount of credits student is taking
      */
     private void addSpecificTypeStudent(String fname, String lname, int credits){
+        if(instateRadioButton.isSelected()){
+            addInstateStudent(fname,lname,credits);
+        }else if(outstateRadioButton.isSelected()){
+            addOutstateStudent(fname,lname,credits);
+        }else if(internationalRadioButton.isSelected()){
+            addInternationalStudent(fname,lname,credits);
+        }else{
+            outputArea.appendText("please select one of the button \n");
+
+        }
+
+
 
     }
 
@@ -216,10 +288,28 @@ public class Controller {
      * @param lname student's last name
      * @param credits credits the student is taking
      */
-    private void addInstateStudent(String fname, String lname, int credits){
+    private void addInstateStudent(String fname, String lname, int credits) {
+        String Funds = funding.getText();
+        instateStudentFunds     =0;
+    if (checkFunds.isSelected()) {
 
+        try {
+            instateStudentFunds = Integer.parseInt(Funds);
+        } catch (NumberFormatException e) {
+            outputArea.appendText("Funding needs to be a number.\n");
+            return;
+        }
     }
+        Student newInstateStudent = new Instate(fname,lname,credits,instateStudentFunds);
 
+       if(!(Allstudents.contains(newInstateStudent))){
+            Allstudents.add(newInstateStudent);
+            outputArea.appendText("Added new student: "+fname+" "+lname+" \n");
+       }
+        else{
+            outputArea.appendText("Student already in students list. Could not add Student\n");
+        }
+     }
 
     /**
      * Will add outstate student to the list
@@ -228,6 +318,15 @@ public class Controller {
      * @param credits credits the student is taking
      */
     private void addOutstateStudent(String fname, String lname, int credits){
+        tristateareaStudent=IsTriState.isSelected();
+        Student newOutstateStudent = new Outstate(fname,lname,credits,tristateareaStudent);
+        if(!(Allstudents.contains(newOutstateStudent))){
+            Allstudents.add(newOutstateStudent);
+            outputArea.appendText("Added new student: " + fname + " " + lname+"\n");
+        }
+        else{
+            outputArea.appendText("Student already in students list. Could not add student \n");
+        }
 
     }
 
@@ -239,7 +338,19 @@ public class Controller {
      * @param credits credits the student is taking
      */
     private void addInternationalStudent(String fname, String lname, int credits){
-
+        if(credits<INTERNATIONAL_STUDENT_CREDIT_REQUIREMENT){
+            outputArea.appendText("Not enough credits for International Student. Could not add Student \n");
+            return;
+        }
+        exchangeStudent=IsExchange.isSelected();
+        Student newInternationalStudent = new International(fname,lname,credits,exchangeStudent);
+        if(!(Allstudents.contains(newInternationalStudent))){
+            Allstudents.add(newInternationalStudent);
+            outputArea.appendText("Added new student: " + fname + " " + lname+" \n");
+        }
+        else{
+            outputArea.appendText("Student already in students list. \n");
+        }
     }
 
     /**
@@ -250,8 +361,48 @@ public class Controller {
      */
     @FXML
     public void actionWhenRemoveButtonPressed(ActionEvent event){
-        //needs to be done
+        String fname;
+        String lname;
+        int credits;
 
+        //check if name inputs are correct:
+        String fnameInputString = fnameInput.getText();
+        String lnameInputString = lnameInput.getText();
+        if( (checkNameTextFieldContent(fnameInputString)) && (checkNameTextFieldContent(lnameInputString)) ){
+            fname = fnameInputString;
+            lname = lnameInputString;
+        }
+        else{
+            outputArea.appendText("First/Last name not inputted at all/in correct format.\n");
+            return;
+        }
+
+        //check if credits input is correct
+        try {
+            credits = parseCreditsValue(creditsInput.getText());
+        } catch(NumberFormatException e){
+            outputArea.appendText("Credits must be entered as numbers only (integers).\n");
+            return;
+        }
+
+        //check if proper value for credits input:
+        if(!isGreaterThanZero(credits)){
+            outputArea.appendText("Must take greater than zero credits.\n");
+            return;
+        }
+        //needs to be done
+        if(Allstudents.isEmpty()){
+            outputArea.appendText("Student list is empty.\n");
+        }
+        Student studentToBeRemoved = new Instate(fname,lname,0,0);
+
+        boolean successfulRemoval = Allstudents.remove(studentToBeRemoved);
+        if(successfulRemoval == false){
+            outputArea.appendText("Failed to remove Student \n");
+        }
+        else{
+            outputArea.appendText("Removed student: " + fname + " " + lname+"\n");
+        }
         // - Check if inputted information is in correct format (maybe) and that proper input exists
         // - Check if list is empty, if it is will print no student/else go to next step
         // - Check if inputted student exists in list, if yes then remove else print student not in list
@@ -316,7 +467,14 @@ public class Controller {
     @FXML
     public void actionWhenPrintButtonPressed(ActionEvent event){
         //needs to be done
+        if(Allstudents.isEmpty()){
+            outputArea.appendText("--Empty List--\n");
+            return;
+        }
 
+
+        outputArea.appendText(  "\n"+Allstudents.toString());
+        outputArea.appendText("--End of List-- \n");
         // -Will check if list is empty, if yes then print list empty else go to next line
         // -Will print all the students in list using the StudentList print() function
         // -Will print --end of list-- at the end
