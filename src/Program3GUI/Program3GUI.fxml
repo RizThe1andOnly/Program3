@@ -38,7 +38,7 @@
                   </HBox>
                   <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Label fx:id="creditsLabel" text="Credits">
+                        <Label fx:id="creditsLabel" text="Numbers of Credits">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -76,36 +76,23 @@
                   <RadioButton fx:id="outstateRadioButton" mnemonicParsing="false" onAction="#typeSelectionDisabler" text="OUTSTATE" toggleGroup="$studentType" GridPane.rowIndex="1" />
                   <RadioButton fx:id="internationalRadioButton" mnemonicParsing="false" onAction="#typeSelectionDisabler" text="INTERNATIONAL" toggleGroup="$studentType" GridPane.rowIndex="2" />
                   <HBox fx:id="fundsArea" alignment="TOP_CENTER" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
-                     <children>
-                        <Label text="Funds" />
-                        <TextField />
+                     <children >
+                        <CheckBox fx:id="checkFunds" text="Funding"  onAction="#fundingdisabler" alignment="center_left"/>
+                        <TextField fx:id="funding" disable="true" alignment="center_left"/>
                      </children>
                      <padding>
-                        <Insets top="5.0" />
+                        <Insets top="7.0" right="12"/>
                      </padding>
                   </HBox>
-                  <HBox fx:id="triStateSelectionArea" alignment="CENTER" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <HBox fx:id="triStateSelectionArea" alignment="CENTER_LEFT" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Label text="Tri-State: ">
-                           <padding>
-                              <Insets right="5.0" />
-                           </padding>
-                        </Label>
-                        <RadioButton mnemonicParsing="false" text="Yes">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="triStateRadioGroup" />
-                           </toggleGroup></RadioButton>
-                        <RadioButton mnemonicParsing="false" text="No" toggleGroup="$triStateRadioGroup" />
+                        <CheckBox fx:id="IsTriState" text="Tri-state student"  alignment="CENTER_LEFT" />
+
                      </children>
                   </HBox>
-                  <HBox fx:id="exchangeSelectionArea" alignment="CENTER" disable="true" layoutX="130.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <HBox fx:id="exchangeSelectionArea" alignment="CENTER_LEFT" disable="true" layoutX="130.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Exchange: " />
-                        <RadioButton mnemonicParsing="false" text="Yes">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="exchangeRadioGroup" />
-                           </toggleGroup></RadioButton>
-                        <RadioButton mnemonicParsing="false" text="No" toggleGroup="$exchangeRadioGroup" />
+                       <CheckBox fx:id="IsExchange" text="Exchange student"  alignment="CENTER_LEFT" />
                      </children>
                   </HBox>
                </children>
@@ -113,8 +100,8 @@
             <VBox alignment="CENTER_LEFT" prefHeight="116.0" prefWidth="81.0">
                <children>
                   <Button fx:id="addCommandButton" mnemonicParsing="false" onAction="#actionWhenAddButtonPressed" text="Add" />
-                  <Button fx:id="removeCommandButton" mnemonicParsing="false" text="Remove" />
-                  <Button fx:id="printCommandButton" mnemonicParsing="false" text="Print" />
+                  <Button fx:id="removeCommandButton" mnemonicParsing="false" onAction="#actionWhenRemoveButtonPressed" text="Remove" />
+                  <Button fx:id="printCommandButton" mnemonicParsing="false" onAction="#actionWhenPrintButtonPressed" text="Print" />
                </children>
             </VBox>
          </children></HBox>
