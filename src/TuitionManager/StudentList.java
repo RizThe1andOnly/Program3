@@ -121,6 +121,20 @@ public class StudentList {
 
     	return false;
     }
+	/**
+	 added to string to correctly return the values
+	 @author Tin Fung
+	 @return String representation of the studentlist object
+
+	 */
+	public String toString(){
+		String students="";
+		for(int i=0;i<this.numberOfStudents;i++) {
+			students+=this.studentList[i].toString()+"\n"+"Tuition Due: " + this.studentList[i].tuitionDue()+"\n";
+
+		}
+	return students;
+	}
 
 
     /**
