@@ -5,11 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Program3GUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Program3GUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Program3/TuitionManager/StudentList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Program3/TuitionManager/StudentList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program3GUI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program3GUI/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program3GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program3GUI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program3GUI/Program3GUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program3GUI/Program3GUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,22 +211,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584329887335" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585114607849">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585176188181">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585114607849" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585114607848">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585176188181" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585176188180">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585114607848" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585114607848">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585176188180" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585176188179">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585114607848" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585114607848">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585176188179" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585176188180">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585114607848" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585176188180" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1584255635710">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

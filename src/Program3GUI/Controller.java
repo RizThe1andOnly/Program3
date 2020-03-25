@@ -201,12 +201,17 @@ public class Controller {
         //check if name inputs are correct:
         String fnameInputString = fnameInput.getText();
         String lnameInputString = lnameInput.getText();
-        if( (checkNameTextFieldContent(fnameInputString)) && (checkNameTextFieldContent(lnameInputString)) ){
+        if( (checkTextFieldContent(fnameInputString)) && (checkTextFieldContent(lnameInputString)) ){
             fname = fnameInputString;
             lname = lnameInputString;
         }
         else{
             outputArea.appendText("First/Last name not inputted at all/in correct format.\n");
+            return;
+        }
+
+        if(!checkTextFieldContent(creditsInput.getText())){
+            outputArea.appendText("Must Enter a value for credits.\n");
             return;
         }
 
@@ -350,7 +355,7 @@ public class Controller {
         //check if name inputs are correct:
         String fnameInputString = fnameInput.getText();
         String lnameInputString = lnameInput.getText();
-        if( (checkNameTextFieldContent(fnameInputString)) && (checkNameTextFieldContent(lnameInputString)) ){
+        if( (checkTextFieldContent(fnameInputString)) && (checkTextFieldContent(lnameInputString)) ){
             fname = fnameInputString;
             lname = lnameInputString;
         }
@@ -361,7 +366,8 @@ public class Controller {
 
 
         if(allStudents.isEmpty()){
-            outputArea.appendText("Student list is empty.\n");
+            outputArea.appendText("Student list is empty, nothing to remove.\n");
+            return;
         }
         Student studentToBeRemoved = new Instate(fname,lname,0,0);
 
@@ -384,15 +390,15 @@ public class Controller {
      *
      * @author Rizwan Chowdhury
      */
-    private boolean checkNameTextFieldContent(String content){
+    private boolean checkTextFieldContent(String content){
         // if the field is empty then check fails
         if(content.equals("")){
             return false;
         }
 
         //check to see how many tokens there are; if more than 1 than too many
-        String[] nameTokens = content.split(" ");
-        if(nameTokens.length > 1){
+        String[] tokens = content.split(" ");
+        if(tokens.length > 1){
             return false;
         }
 
@@ -438,6 +444,7 @@ public class Controller {
     public void actionWhenPrintButtonPressed(ActionEvent event){
         if(allStudents.isEmpty()){
             outputArea.appendText("--Empty List--\n");
+            clearGuiInputs();
             return;
         }
 
