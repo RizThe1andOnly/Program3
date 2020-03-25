@@ -36,7 +36,7 @@
                         <Insets left="10.0" top="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                  <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label fx:id="creditsLabel" text="Numbers of Credits">
                            <HBox.margin>
@@ -46,8 +46,11 @@
                         <TextField fx:id="creditsInput" prefHeight="25.0" prefWidth="208.0" />
                      </children>
                      <padding>
-                        <Insets left="19.0" top="5.0" />
+                        <Insets right="27.0" top="5.0" />
                      </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </HBox>
                </children></VBox>
          </children>
@@ -76,23 +79,23 @@
                   <RadioButton fx:id="outstateRadioButton" mnemonicParsing="false" onAction="#typeSelectionDisabler" text="OUTSTATE" toggleGroup="$studentType" GridPane.rowIndex="1" />
                   <RadioButton fx:id="internationalRadioButton" mnemonicParsing="false" onAction="#typeSelectionDisabler" text="INTERNATIONAL" toggleGroup="$studentType" GridPane.rowIndex="2" />
                   <HBox fx:id="fundsArea" alignment="TOP_CENTER" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
-                     <children >
-                        <CheckBox fx:id="checkFunds" text="Funding"  onAction="#fundingdisabler" alignment="center_left"/>
-                        <TextField fx:id="funding" disable="true" alignment="center_left"/>
+                     <children>
+                        <CheckBox fx:id="checkFunds" alignment="center_left" onAction="#fundingdisabler" text="Funding" />
+                        <TextField fx:id="funding" alignment="center_left" disable="true" />
                      </children>
                      <padding>
-                        <Insets top="7.0" right="12"/>
+                        <Insets right="12" top="7.0" />
                      </padding>
                   </HBox>
                   <HBox fx:id="triStateSelectionArea" alignment="CENTER_LEFT" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <CheckBox fx:id="IsTriState" text="Tri-state student"  alignment="CENTER_LEFT" />
+                        <CheckBox fx:id="IsTriState" alignment="CENTER_LEFT" text="Tri-state student" />
 
                      </children>
                   </HBox>
                   <HBox fx:id="exchangeSelectionArea" alignment="CENTER_LEFT" disable="true" layoutX="130.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                       <CheckBox fx:id="IsExchange" text="Exchange student"  alignment="CENTER_LEFT" />
+                       <CheckBox fx:id="IsExchange" alignment="CENTER_LEFT" text="Exchange student" />
                      </children>
                   </HBox>
                </children>
@@ -105,6 +108,6 @@
                </children>
             </VBox>
          </children></HBox>
-      <TextArea fx:id="outputArea" prefHeight="200.0" prefWidth="200.0" promptText="Output Area" />
+      <TextArea fx:id="outputArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Output Area" />
    </children>
 </VBox>

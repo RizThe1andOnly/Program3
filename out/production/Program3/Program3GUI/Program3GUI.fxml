@@ -36,9 +36,9 @@
                         <Insets left="10.0" top="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                  <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Label fx:id="creditsLabel" text="Credits">
+                        <Label fx:id="creditsLabel" text="Numbers of Credits">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -46,8 +46,11 @@
                         <TextField fx:id="creditsInput" prefHeight="25.0" prefWidth="208.0" />
                      </children>
                      <padding>
-                        <Insets left="19.0" top="5.0" />
+                        <Insets right="27.0" top="5.0" />
                      </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </HBox>
                </children></VBox>
          </children>
@@ -77,35 +80,22 @@
                   <RadioButton fx:id="internationalRadioButton" mnemonicParsing="false" onAction="#typeSelectionDisabler" text="INTERNATIONAL" toggleGroup="$studentType" GridPane.rowIndex="2" />
                   <HBox fx:id="fundsArea" alignment="TOP_CENTER" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
                      <children>
-                        <Label text="Funds" />
-                        <TextField />
+                        <CheckBox fx:id="checkFunds" alignment="center_left" onAction="#fundingdisabler" text="Funding" />
+                        <TextField fx:id="funding" alignment="center_left" disable="true" />
                      </children>
                      <padding>
-                        <Insets top="5.0" />
+                        <Insets right="12" top="7.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="triStateSelectionArea" alignment="CENTER" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <HBox fx:id="triStateSelectionArea" alignment="CENTER_LEFT" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Label text="Tri-State: ">
-                           <padding>
-                              <Insets right="5.0" />
-                           </padding>
-                        </Label>
-                        <RadioButton mnemonicParsing="false" text="Yes">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="triStateRadioGroup" />
-                           </toggleGroup></RadioButton>
-                        <RadioButton mnemonicParsing="false" text="No" toggleGroup="$triStateRadioGroup" />
+                        <CheckBox fx:id="IsTriState" alignment="CENTER_LEFT" text="Tri-state student" />
+
                      </children>
                   </HBox>
-                  <HBox fx:id="exchangeSelectionArea" alignment="CENTER" disable="true" layoutX="130.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <HBox fx:id="exchangeSelectionArea" alignment="CENTER_LEFT" disable="true" layoutX="130.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Exchange: " />
-                        <RadioButton mnemonicParsing="false" text="Yes">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="exchangeRadioGroup" />
-                           </toggleGroup></RadioButton>
-                        <RadioButton mnemonicParsing="false" text="No" toggleGroup="$exchangeRadioGroup" />
+                       <CheckBox fx:id="IsExchange" alignment="CENTER_LEFT" text="Exchange student" />
                      </children>
                   </HBox>
                </children>
@@ -113,11 +103,11 @@
             <VBox alignment="CENTER_LEFT" prefHeight="116.0" prefWidth="81.0">
                <children>
                   <Button fx:id="addCommandButton" mnemonicParsing="false" onAction="#actionWhenAddButtonPressed" text="Add" />
-                  <Button fx:id="removeCommandButton" mnemonicParsing="false" text="Remove" />
-                  <Button fx:id="printCommandButton" mnemonicParsing="false" text="Print" />
+                  <Button fx:id="removeCommandButton" mnemonicParsing="false" onAction="#actionWhenRemoveButtonPressed" text="Remove" />
+                  <Button fx:id="printCommandButton" mnemonicParsing="false" onAction="#actionWhenPrintButtonPressed" text="Print" />
                </children>
             </VBox>
          </children></HBox>
-      <TextArea fx:id="outputArea" prefHeight="200.0" prefWidth="200.0" promptText="Output Area" />
+      <TextArea fx:id="outputArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Output Area" />
    </children>
 </VBox>
