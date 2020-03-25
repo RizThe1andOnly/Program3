@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Program3testDoc.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Program3testDocPDF.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program3GUI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program3GUI/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program3GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program3GUI/Main.java" afterDir="false" />
     </list>
@@ -86,7 +88,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/InClassExample" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -95,6 +97,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rizwan\IdeaProjects\Program3\src" />
       <recent name="C:\Users\Rizwan\IdeaProjects\Program3\src\TuitionManager" />
     </key>
   </component>
@@ -207,26 +210,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1584330283771" />
-    <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1584329887335">
+    <state x="430" y="96" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585176865249">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584329887335" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585176188181">
+    <state x="430" y="96" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1585176865249" />
+    <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1585176861115">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585176188181" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585176188180">
+    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585176861115" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585177285776">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585176188180" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585176188179">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585177285776" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585177285776">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585176188179" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585176188180">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585177285776" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585177285775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585176188180" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585177285775" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585177285776">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585177285776" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1584255635710">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

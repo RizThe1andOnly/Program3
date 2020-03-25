@@ -6,8 +6,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
 
-// ADD MEANS BY WHIHCH TO HANDLE ANY AND ALL EXCEPTIONS !!
-
 /**
  * Controller class used to define and control the functionalities of the GUI. Will coordinate with FXML file.
  * @author Rizwan Chowdhury
@@ -24,7 +22,7 @@ public class Controller {
     private final int INTERNATIONAL_STUDENT_CREDIT_REQUIREMENT = 9;
     private final int FULL_TIME_THRESHOLD = 12;
 
-    //following are instances of the fxml elements, using their fxml ids, that will be used
+    //following are instances of the fxml elements
     @FXML
     private HBox triStateSelectionArea;
 
@@ -98,7 +96,7 @@ public class Controller {
 
     /**
      * Disables/enables the funding textbox based on whether or not funds checkbox is checked or not
-     * @param event
+     * @param event Change of state of funding checkbox between checked and unchecked
      * @author Tin Fung
      */
     @FXML

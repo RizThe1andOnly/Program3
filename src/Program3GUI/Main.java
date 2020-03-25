@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     /**
-     * starts the gui
+     * starts the gui. note this function was edited by Rizwan and Tin not created by them
      * @param primaryStage the main stage that will be shown to user
      * @throws Exception throws I/O exception if fxml file not found
      * @author Rizwan Chowdhury (edited)
@@ -36,6 +36,7 @@ public class Main extends Application {
 
     /**
      * main function that will run the entire program by triggering start function.
+     * note this function was edited by Rizwan and Tin not created by them.
      * @param args arguments passed into the main function
      * @author Rizwan Chowdhury (edited)
      * @author Tin Fung (edited)
