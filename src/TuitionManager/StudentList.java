@@ -130,7 +130,7 @@ public class StudentList {
 	public String toString(){
 		String students="";
 		for(int i=0;i<this.numberOfStudents;i++) {
-			students+=this.studentList[i].toString()+"\n"+"Tuition Due: " + this.studentList[i].tuitionDue()+"\n";
+			students+=this.studentList[i].toString()+"\n"+"Tuition Due: " + this.studentList[i].tuitionDue()+"\n\n";
 
 		}
 	return students;
