@@ -1,8 +1,0 @@
-# Program 3
-- Code for program 3 gui is in folder Program3GUI which contains:
-    - Main.java
-    - Controller.java
-    - Program3GUI.fxml
-- Program 2 code in the directory named TuitionManager; to run program 2 please open and run the Prog2.class file
-- JDocs folder contains the java docs.
-- Test case documents are in this directory named Program3testDoc, both word and pdf versions exist here.
